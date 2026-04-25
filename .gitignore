@@ -1,0 +1,10 @@
+# .gitignore
+data/*.json
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+*.log
+env/
+venv/
+search-engine-plan.md

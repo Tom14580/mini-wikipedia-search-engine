@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Search Engine</title>
+    <style>
+        body { font-family: sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; }
+        input[type=text] { width: 80%; padding: 10px; font-size: 16px; }
+        button { padding: 10px 16px; font-size: 16px; }
+        .result { margin: 24px 0; }
+        .result a { font-size: 18px; color: #1a0dab; text-decoration: none; }
+        .result a:hover { text-decoration: underline; }
+        .result .url { color: #006621; font-size: 13px; margin: 2px 0; }
+        .result .snippet { color: #444; font-size: 14px; }
+        mark { background: #fff3b0; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Mini Search</h1>
+    <form action="/search" method="get">
+        <input type="text" name="q" value="{{ q }}" placeholder="Search..." autofocus>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results is not none %}
+        <p><small>{{ results|length }} result(s)</small></p>
+        {% for url, doc in results.items() %}
+        <div class="result">
+            <a href="{{ url }}">{{ doc.title }}</a>
+            <div class="url">{{ url }}</div>
+        </div>
+        {% endfor %}
+        {% if not results %}
+        <p>No results found.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
