@@ -17,13 +17,13 @@ DOC_STORE = load_json("data/documents.json")
 # return index
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", results=None)
 
 # fetch the search results and pass them into index
 @app.route("/search")
 def search():
     query = request.args.get("q")
     if query == None:
-        return render_template("index.html")
+        return render_template("index.html", results=None)
     response = run_query(query, INDEX, DOC_STORE, 10)
     return render_template("index.html", results=response)
