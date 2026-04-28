@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a mini search engine that I have built to crawl Wikipeadia. It indexes pages using **TF‑IDF** (Term Frequency‑Inverse Document Frequency), and provides a web interface to search the crawled pages. I built this to learn about and demonstrate inverted index data structures, TF-IDF ranking, and pipeline architecture.
+This is a mini search engine that I have built to crawl Wikipedia. It indexes pages using **TF‑IDF** (Term Frequency‑Inverse Document Frequency), and provides a web interface to search the crawled pages. I built this to learn about and demonstrate inverted index data structures, TF-IDF ranking, and pipeline architecture.
 
 ## How to run it
 
